@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package= ".;pb";
+
+import "node_message.proto";
+
+enum MembershipMsgType {
+  REPLY = 0;
+  REQUEST = 1;
+}
+
+message MembershipRequestMessage {
+  repeated Node nodes = 1;
+  Node source = 2;
+}
+
+message MembershipReplyMessage {
+  repeated Node nodes = 1;
+}

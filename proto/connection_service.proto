@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = ".;pb";
+
+import "node_message.proto";
+import "empty_message.proto";
+
+service Connector {
+  rpc Connect(Node) returns (NodeList);
+  rpc Disconnect(Node) returns (Empty);
+}

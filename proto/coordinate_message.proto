@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package= ".;pb";
+
+import "node_message.proto";
+import "google/protobuf/timestamp.proto";
+
+message GossipCoordinate {
+  repeated double Value = 1; // list of coordinates
+  Node node = 2;
+  google.protobuf.Timestamp time = 3;
+}
+
+message GossipCoordinateList {
+  repeated GossipCoordinate coordinates = 1;
+}

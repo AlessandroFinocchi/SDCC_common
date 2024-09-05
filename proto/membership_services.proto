@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = ".;pb";
+
+import "membership_message.proto";
+
+service Membership {
+  rpc ShufflePeers(MembershipRequestMessage) returns (MembershipReplyMessage);
+}

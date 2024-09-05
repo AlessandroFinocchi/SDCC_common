@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package= ".;pb";
+
+message VivaldiCoordinate {
+  repeated double Value = 1; // list of coordinates
+  double Error = 2; // w value
+}

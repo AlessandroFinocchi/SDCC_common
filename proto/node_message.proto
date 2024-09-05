@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package= ".;pb";
+
+message Node {
+  string Id = 1;
+  string MembershipIp = 2;
+  uint32 MembershipPort = 3;
+  string VivaldiIp = 4;
+  uint32 VivaldiPort = 5;
+  string GossipIp = 6;
+  uint32 GossipPort = 7;
+
+}
+
+message NodeList {
+  repeated Node Nodes = 1;  // list of nodes
+}

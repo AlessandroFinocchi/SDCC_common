@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = ".;pb";
+
+import "coordinate_message.proto";
+
+service VivaldiGossip {
+  rpc Gossip(GossipCoordinateList) returns (GossipCoordinateList);
+}

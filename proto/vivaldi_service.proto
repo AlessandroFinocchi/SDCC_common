@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = ".;pb";
+
+import "vivaldi_coordinate_message.proto";
+import "empty_message.proto";
+
+// Has to be a pull model since the client got the server in its partial view and not vice versa
+service Vivaldi {
+  rpc PullCoordinates(Empty) returns (VivaldiCoordinate);
+}

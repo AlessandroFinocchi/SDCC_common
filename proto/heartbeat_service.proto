@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = ".;pb";
+
+import "node_message.proto";
+import "empty_message.proto";
+
+service Heartbeat {
+  // An host sends a heartbeat to the registry that responds with the node list of the host's cluster
+  rpc Beat(Node) returns (Empty);
+}
